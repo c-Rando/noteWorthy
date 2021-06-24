@@ -1,0 +1,17 @@
+[
+    {
+        "title": "Note 1",
+        "text": "My note 1",
+        "id": "ff7338e0-e3b5-4f01-95ca-7c158b9f10d0"
+    },
+    {
+        "title": "Note 2",
+        "text": "My note 2",
+        "id": "224dc3d1-0247-4574-89b3-2408322dbcb2"
+    },
+    {
+        "title": "Note 3",
+        "text": "Note 3 working",
+        "id": "59712be2-02f8-47e5-a396-b663131cb91a"
+    }
+]
