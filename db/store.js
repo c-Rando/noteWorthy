@@ -32,6 +32,14 @@ const getNote = async (noteId) => {
     return null;
 };
 
+const deleteNote = async (noteId) => {
+    const data = await readFileAsync('./db/db.json', { encoding: 'utf-8' });
+    const listOfNotes = JSON.parse(data);
+    const listOfNotesWithoutNote = listOfNotes.filter(e => e.id !== noteId);
+    const notesString = JSON.stringify(listOfNotesWithoutNote, null, 4);
+    await writeFileAsync('./db/db.json', notesString);
+    return true;
+};
 
 // 1. Read the db.json file.
 // 2. Parse the content of db.json to an array variable.
@@ -53,5 +61,6 @@ const createNote = async (note) => {
 module.exports = {
     getNotes,
     getNote,
-    createNote
+    createNote,
+    deleteNote
 }

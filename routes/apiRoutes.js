@@ -25,12 +25,21 @@ router.route('/notes')
         };
     });
 
-router.route('/notes/:id')
+    router.route('/notes/:id')
     .get(async (req, res) => {
         try {
             const noteId = req.params.id;
             const note = await store.getNote(noteId);
             console.log(note);
+            return res.json(note);
+        } catch (err) {
+            res.status(500).json({ msg: err.message });
+        };
+    })
+    .delete(async (req, res) => {
+        try {
+            const noteId = req.params.id;
+            const note = await store.deleteNote(noteId);
             return res.json(note);
         } catch (err) {
             res.status(500).json({ msg: err.message });

@@ -1,6 +1,6 @@
 const express = require('express');
 const htmlRoutes = require('./routes/htmlRoutes')
-const apiRoutes = require('./routes/apiRoutes')
+const apiRoutes = require('./routes/apiRoutes.js')
 
 //initialize app to create a port 
 const app = express();
@@ -18,4 +18,4 @@ app.use('/api', apiRoutes);
 app.use('/', htmlRoutes);
 
 
-app.listen(PORT, () => console.log(`listening on port ${PORT}`))
+app.listen(PORT, () => console.log(`Server listening on port http://localhost:${PORT}`))
